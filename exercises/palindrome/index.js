@@ -7,17 +7,31 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+// //===By Myself
 function palindrome(str) {
     const strArr = str.split('');
     const len = strArr.length;
     var flag = true;
     for (var i = 0; i < len / 2; i++) {
-        if (i < len - i && strArr[i] != strArr[len-i-1]){
+        if (strArr[i] != strArr[len-i-1]){
             flag = false;
         }
     }
     return flag;
 }
+
+// //===Official-1
+// function palindrome(str) {
+//     const strArr = str.split('');
+//     const len = strArr.length;
+//     var flag = true;
+//     for (var i = 0; i < len / 2; i++) {
+//         if (i < len - i && strArr[i] != strArr[len-i-1]){
+//             flag = false;
+//         }
+//     }
+//     return flag;
+// }
 
 
 module.exports = palindrome;
