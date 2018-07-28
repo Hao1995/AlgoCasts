@@ -12,20 +12,35 @@
 //   4
 //   buzz
 
-//=== By Myself
+// //=== By Myself
+// function fizzBuzz(n) {
+//     let tmp = 1;
+//     while (tmp <= n) {
+//         if (tmp% 5 === 0 && tmp% 3 === 0 ) {
+//             console.log('fizzbuzz');
+//         }else if (tmp% 3 === 0) {
+//             console.log('fizz');
+//         }else if (tmp% 5 === 0) {
+//             console.log('buzz');
+//         }else {
+//             console.log(tmp);
+//         }
+//         tmp++;
+//     }
+// }
+
+//=== Official-1
 function fizzBuzz(n) {
-    let tmp = 1;
-    while (tmp <= n) {
-        if (tmp% 5 === 0 && tmp% 3 === 0 ) {
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0 ) {
             console.log('fizzbuzz');
-        }else if (tmp% 3 === 0) {
+        }else if (i % 3 === 0) {
             console.log('fizz');
-        }else if (tmp% 5 === 0) {
+        }else if (i % 5 === 0) {
             console.log('buzz');
         }else {
-            console.log(tmp);
+            console.log(i);
         }
-        tmp++;
     }
 }
 
