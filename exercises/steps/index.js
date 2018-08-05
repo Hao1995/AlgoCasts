@@ -17,6 +17,19 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+
+//=== By Myself
+function steps(n) {
+    for (let i = 1; i <= n; i++) {
+        let str = '';
+        for (let j = i; j > 0; j--) {
+            str += '#';            
+        }
+        for (let j = n - i; j > 0; j--) {
+            str += ' ';
+        }
+        console.log(str)
+    }
+}
 
 module.exports = steps;
