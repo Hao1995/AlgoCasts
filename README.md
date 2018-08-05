@@ -1,7 +1,7 @@
 # AlgoCasts
 Frok from https://github.com/StephenGrider/AlgoCasts.  
 Following this course  "https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure/", then learn and fix it.  
-Teacher : Joseph Salvatore  
+Teacher : Stephen Grider
 
 ## Install
 ```
