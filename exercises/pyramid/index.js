@@ -14,6 +14,7 @@
 //       ' ### '
 //       '#####'
 
+//=== By Myslef-1
 function pyramid(n) {
     for (let row = 1; row <= n; row++) {
         let str = '';
@@ -33,7 +34,25 @@ function pyramid(n) {
     }
 }
 
-module.exports = pyramid;
+//=== By Myslef-2
+function pyramid(n, row = 0, str = '') {
+    if (n === row) {
+        return;
+    }
 
+    if (str.length === n * 2 - 1) {
+        console.log(str);
+        return pyramid(n, row + 1);
+    }
+    let strLen = str.length;
+    if (n - row - 1 <= strLen && strLen < n + row) {
+        str += '#';
+        pyramid(n, row, str);
+    } else {
+        str += ' ';
+        pyramid(n, row, str);
+    }
+}
 
 pyramid(3);
+module.exports = pyramid;
