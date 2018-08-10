@@ -35,8 +35,8 @@ function pyramid(n) {
 }
 
 //=== By Myslef-2
-function pyramid(n, row = 0, str = '') {
-    if (n === row) {
+function pyramid(n, row = 1, str = '') {
+    if (n === row - 1) {
         return;
     }
 
@@ -45,7 +45,7 @@ function pyramid(n, row = 0, str = '') {
         return pyramid(n, row + 1);
     }
     let strLen = str.length;
-    if (n - row - 1 <= strLen && strLen < n + row) {
+    if (n - row <= strLen && strLen < n + row - 1) {
         str += '#';
         pyramid(n, row, str);
     } else {
@@ -54,5 +54,4 @@ function pyramid(n, row = 0, str = '') {
     }
 }
 
-pyramid(3);
 module.exports = pyramid;
