@@ -8,16 +8,29 @@
 // Example:
 //   fib(4) === 3
 
-//=== By Myself
+// //=== By Myself
+// function fib(n) {
+//     switch (n) {
+//         case 0:
+//             return 0;
+//         case 1:
+//             return 1;
+//     }
+
+//     return fib(n-1) + fib(n-2);
+// }
+
+//=== Officail01
 function fib(n) {
-    switch (n) {
-        case 0:
-            return 0;
-        case 1:
-            return 1;
+    const result = [0, 1];
+    for (let i = 2; i <= n; i++) {
+        const a = result[i-1];
+        const b = result[i-2];
+
+        result.push(a + b);
     }
 
-    return fib(n-1) + fib(n-2);
+    return result[n];
 }
 
 module.exports = fib;
