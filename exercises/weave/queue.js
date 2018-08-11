@@ -16,7 +16,7 @@ class Queue {
   remove() {
     return this.data.pop();
   }
-
+  //by myself
   peek(){
     return this.data[this.data.length-1];
   }
