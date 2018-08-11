@@ -8,18 +8,31 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-// == by myself
+// // == by myself
+// class Queue {
+//     constructor() {
+//         this.queue = [];
+//     }
+//     add(num) {
+//         this.queue.push(num);
+//     }
+//     remove() {
+//         const result = this.queue[0];
+//         this.queue = this.queue.splice(1);
+//         return result;
+//     }
+// }
+
+// == official01
 class Queue {
     constructor() {
-        this.queue = [];
+        this.data = [];
     }
-    add(num) {
-        this.queue.push(num);
+    add(record) {
+        this.data.unshift(record);
     }
     remove() {
-        const result = this.queue[0];
-        this.queue = this.queue.splice(1);
-        return result;
+        return this.data.pop();
     }
 }
 
