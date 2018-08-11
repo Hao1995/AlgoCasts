@@ -8,6 +8,19 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+// == by myself
+class Queue {
+    constructor() {
+        this.queue = [];
+    }
+    add(num) {
+        this.queue.push(num);
+    }
+    remove() {
+        const result = this.queue[0];
+        this.queue = this.queue.splice(1);
+        return result;
+    }
+}
 
 module.exports = Queue;
