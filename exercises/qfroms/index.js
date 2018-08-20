@@ -14,39 +14,76 @@
 
 const Stack = require('./stack');
 
+//=== By Myself
+// class Queue {
+//     constructor() {
+//         this.queueA = new Stack();
+//         this.queueB = new Stack();
+//     }
+//     add(record) {
+//         this.queueA.push(record);
+//     }
+//     remove() {
+//         while(this.queueA.peek()) {
+//             this.queueB.push(this.queueA.pop());
+//         }
+        
+//         const value = this.queueB.pop();
+        
+//         while(this.queueB.peek()) {
+//             this.queueA.push(this.queueB.pop());
+//         }
+
+//         return value
+//     }
+//     peek() {
+//         while(this.queueA.peek()) {
+//             this.queueB.push(this.queueA.pop());
+//         }
+
+//         const value = this.queueB.peek();
+        
+//         while(this.queueB.peek()) {
+//             this.queueA.push(this.queueB.pop());
+//         }
+
+//         return value;
+//     }
+// }
+
 class Queue {
     constructor() {
-        this.queueA = new Stack();
-        this.queueB = new Stack();
+        this.first = new Stack();
+        this.second = new Stack();
     }
     add(record) {
-        this.queueA.push(record);
+        this.first.push(record);
     }
     remove() {
-        while(this.queueA.peek()) {
-            this.queueB.push(this.queueA.pop());
-        }
-        
-        const value = this.queueB.pop();
-        
-        while(this.queueB.peek()) {
-            this.queueA.push(this.queueB.pop());
+        while (this.first.peek()) {
+            this.second.push(this.first.pop());
         }
 
-        return value
+        const record = this.second.pop();
+
+        while (this.second.peek()) {
+            this.first.push(this.second.pop());
+        }
+
+        return record;
     }
     peek() {
-        while(this.queueA.peek()) {
-            this.queueB.push(this.queueA.pop());
+        while (this.first.peek()) {
+            this.second.push(this.first.pop());
         }
 
-        const value = this.queueB.peek();
-        
-        while(this.queueB.peek()) {
-            this.queueA.push(this.queueB.pop());
+        const record = this.second.peek();
+
+        while (this.second.peek()) {
+            this.first.push(this.second.pop());
         }
 
-        return value;
+        return record;
     }
 }
 
