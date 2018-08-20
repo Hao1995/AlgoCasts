@@ -173,6 +173,15 @@ class LinkedList {
         previous.next = node;
         return;
     }
+
+    forEach(customFunc) {
+        let node = this.head;
+        while (node) {
+            customFunc(node);
+            node = node.next;
+        }
+        return;
+    }
 }
 
 module.exports = { Node, LinkedList };
