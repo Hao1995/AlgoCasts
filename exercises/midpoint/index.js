@@ -12,20 +12,34 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {
-    let slow = list.head;
-    let fast = list.head;
+// // by myself
+// function midpoint(list) {
+//     let slow = list.head;
+//     let fast = list.head;
     
-    while (fast) {
-        if (fast.next && fast.next.next) {
-            fast = fast.next.next;
-        } else {
-            break;
-        }
-        if (slow.next) {
-            slow = slow.next;
-        }
+//     while (fast) {
+//         if (fast.next && fast.next.next) {
+//             fast = fast.next.next;
+//         } else {
+//             break;
+//         }
+//         if (slow.next) {
+//             slow = slow.next;
+//         }
         
+//     }
+
+//     return slow;
+// }
+
+// official
+function midpoint(list) {
+    let slow = list.getFirst();
+    let fast = list.getFirst();
+    
+    while (fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;   
     }
 
     return slow;
