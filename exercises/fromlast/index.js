@@ -11,21 +11,40 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
+// // myself
+// function fromLast(list, n) {
+//     let slow = list.getFirst();
+//     let fast = list.getFirst();
+
+//     for (let i = 0; i < n; i++) {
+//         if (fast.next) {
+//             fast = fast.next;
+//         } else {
+//             return fast.next;
+//         }
+//     }
+
+//     while (fast.next) {
+//         fast = fast.next;
+//         slow = slow.next;
+//     }
+
+//     return slow;
+// }
+
+// official
 function fromLast(list, n) {
     let slow = list.getFirst();
     let fast = list.getFirst();
 
-    for (let i = 0; i < n; i++) {
-        if (fast.next) {
-            fast = fast.next;
-        } else {
-            return fast.next;
-        }
+    while (n > 0) {
+        fast = fast.next;
+        n--;
     }
 
     while (fast.next) {
-        fast = fast.next;
         slow = slow.next;
+        fast = fast.next;
     }
 
     return slow;
