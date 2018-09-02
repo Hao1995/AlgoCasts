@@ -29,6 +29,40 @@ class Node {
             this.right = new Node(data);
         }
     }
+
+    // my self
+    // contains(data) {
+    //     if (data === this.data) {
+    //         return this;
+    //     } else if (data < this.data) {
+    //         if (this.left) {
+    //             return this.left.contains(data);
+    //         } else {
+    //             return null;
+    //         }
+    //     } else if (data > this.data) {
+    //         if (this.right) {
+    //             return this.right.contains(data);
+    //         } else {
+    //             return null;
+    //         }
+    //     }
+    // }
+
+    // Official 01
+    contains(data) {
+        if (data === this.data) {
+            return this;
+        }
+
+        if (this.data < data && this.right) {
+            return this.right.contains(data);
+        } else if (this.data > data && this.left) {
+            return this.left.contains(data);
+        }
+
+        return null;
+    }
 }
 
 module.exports = Node;
