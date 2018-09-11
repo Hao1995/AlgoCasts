@@ -67,8 +67,15 @@ function selectionSort(arr) {
     return arr;
 }
 
+// Myself
 function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr
+    }
+    
+    let divIdx = Math.ceil(arr.length/2);
 
+    return merge(mergeSort(arr.slice(0, divIdx)), mergeSort(arr.slice(divIdx, arr.length)))
 }
 
 // // Myself
