@@ -71,8 +71,38 @@ function mergeSort(arr) {
 
 }
 
-function merge(left, right) {
+// // Myself
+// function merge(left, right) {
+//     let arr = []
+//     while(left.length > 0 || right.length > 0) {
+//         if (left.length > 0 && right.length > 0) {
+//             if (left[0] < right[0]) {
+//                 arr.push(left.shift());
+//             } else {
+//                 arr.push(right.shift());
+//             }
+//         } else if (left.length > 0) {
+//             arr.push(left.shift());
+//         } else if (right.length > 0) {
+//             arr.push(right.shift());
+//         }
+//     }
+//     return arr;
+// }
 
+// Official
+function merge(left, right) {
+    const results = []
+
+    while (left.length && right.length) {
+        if (left[0] < right[0]) {
+            results.push(left.shift());
+        } else {
+            results.push(right.shift());
+        }
+    }
+
+    return [...results, ...left, ...right];
 }
 
-module.exports = { bubbleSort, selectionSort, mergeSort };
+module.exports = { bubbleSort, selectionSort, mergeSort, merge };
